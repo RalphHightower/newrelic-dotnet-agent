@@ -4,6 +4,66 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [10.14.0](https://github.com/RalphHightower/newrelic-dotnet-agent/compare/v10.13.0...v10.14.0) (2023-08-05)
+
+
+### Notice
+
+* The Dotnet VMs UI page is now available for .NET CLR performance metrics. There is a new New Relic APM UI page available called "Dotnet VMs" that displays the data the .NET agent collects about an application's CLR performance.  See the [performance metrics documentaton](https://docs.newrelic.com/docs/apm/agents/net-agent/other-features/net-performance-metrics/) for more details. ([cc7cede](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/cc7cedecc113812b5f7274e7a6bf1aa5a2511720))
+
+
+### New Features
+
+* Add additional logging when RUM injection is being skipped. ([#1561](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1561)) ([e1b8eca](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/e1b8eca24fc63671a8ea1bafaebabbb9f3b29cb2))
+* Add commented out workflow to get release checksums ([68a7ee7](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/68a7ee76f83fcf024dd8ec1ff7d07a38a7f113e9))
+* Add detailed assembly reporting to enable Vulnerability Management support. ([#1685](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1685)) ([f249753](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/f2497536dadb34caded7aa916b5f404ebf19e52a))
+* Add instrumentation for .NET Elasticsearch clients. ([#1575](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1575)) ([8e49d7b](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/8e49d7bfc22df88abc96a6ebc2518a7be8a1d29b))
+* add instrumentation for newer MongoDB.Client methods ([#1732](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1732)) ([1aa5680](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/1aa5680a8f7f855895203a45b8dfcc5059d656e0))
+* add new settings to report linux distro name and version ([#1439](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1439)) ([21caed7](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/21caed7f2e6ffe423365f817ff96a4e41fc1218b))
+* Add support for filtering log events based on a list of log levels so that they are not forwarded to New Relic. Also adds new logging metrics to count the total number of filtered log events (Logging/denied). Refer to our [application logging configuration](https://docs.newrelic.com/docs/apm/agents/net-agent/configuration/net-agent-configuration/#application_logging) documentation for more details. ([#1760](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1760)) ([#1761](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1761)) ([#1762](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1762)) ([#1766](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1766)) ([aadce3a](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/aadce3a09f9fe3c77a93f557686f1ddc26fc6169))
+* add support for MySql.Data version 8.0.33+ ([#1708](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1708)) ([69d15df](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/69d15dfbed178fb5698695253160ae12a4f7a410))
+* Add support for Sitecore.Logging. ([#1790](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1790)) ([#1795](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1795)) ([6d1934a](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/6d1934aa3756d20bf45a1b42e5da2286967b2db5))
+* add Supportability/Logging/Forwarding/Dropped metric ([#1470](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1470)) ([89dd33a](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/89dd33a6febc129c5051136226243845c606ca70))
+* Adds minimal support for Devart Oracle client. ([181a628](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/181a628ff1cb7a0f0b7a347378644782f085f3ab))
+* Create workflow to get release checksums ([#1475](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1475)) ([1b0dd92](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/1b0dd9251647aa8a51e2417f5413d14d52d3d60b))
+* Instrument OpenAsync() for SQL libraries. ([#1725](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1725)) ([a695ce6](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/a695ce6de7e56bc3f803c9b9f6c8c09b30c106fd))
+* Move TLS config logging closer to connect. ([#1562](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1562)) ([0ff3ddd](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/0ff3ddde1c8c0aed3b0a3c1aaf4c59e7ddc3837c))
+* Use Serilog instead of log4net for internal logging.  ([#1661](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1661)) ([51080df](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/51080df3848e36e0b6aa29b6cb9a0e94a1638b6f))
+
+
+### Fixes
+
+* Add missing instrumentation to MSI installer ([#1569](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1569)) ([b65b117](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/b65b1170d7649ab6e82a9796f235925ca147393c))
+* Add more validation to msi installer. ([#1716](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1716)) ([d7bb7f2](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/d7bb7f290beae8394599cee1ea9b3213cf2dc473))
+* Add NServiceBus instrumentation to the MSI installer for .NET Core/5+. ([#1576](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1576)) ([3cae03e](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/3cae03eacbfb4b2c250abb3a35047190571d35a6))
+* Allow StackExchange.Redis v2+ profiling to start outside of a transaction. ([#1501](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1501)) ([#1504](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1504)) ([925d016](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/925d016c145b50b75a3b3401de303f5fa9a64609))
+* allow the agent to accept multiple versions of legacy NR distributed tracing headers ([#1489](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1489)) ([23ee241](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/23ee24141ad44afa39e3f35f93aa2ae7570acb72))
+* Cache the AgentEnabled setting value. ([#1723](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1723)) ([1624938](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/1624938ab48b63c1fa6e98037d74976dbc8186da))
+* Clearing transaction context for held transactions and async WCF client instrumentation timing. ([#1608](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1608)) ([db9a48e](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/db9a48e50b66c345fd53ff64b296025d03da77bb))
+* deploy/linux/Dockerfile to reduce vulnerabilities ([#1001](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1001)) ([ba7d759](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/ba7d759d3593aaf6c8ffddfc5824b667b439937f))
+* deploy/linux/Dockerfile to reduce vulnerabilities ([#1364](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1364)) ([973f780](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/973f780d868870e6e333a2e6874c6c7c108271a9))
+* deploy/linux/Dockerfile to reduce vulnerabilities ([#1384](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1384)) ([4ed084b](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/4ed084bc193e1eb5ae8907bd88cf0d73048221df))
+* don't throw when unable to get parent process path ([#1424](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1424)) ([3b1001f](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/3b1001f47a9f2fb57133a26d734c9175c5613e28))
+* Exclude WebResource.axd and ScriptResource.axd from browser instrumentation (via default config). ([#1711](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1711)) ([2fcce95](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/2fcce95093ed4ef6d1efe67489c8d1ae6c9b29e6))
+* Fix a memory leak when using StackExchange.Redis v2+. ([#1473](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1473)) ([#1504](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1504)) ([925d016](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/925d016c145b50b75a3b3401de303f5fa9a64609))
+* fix regression in NLog local decoration when logging objects as parameters ([#1480](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1480)) ([a19addd](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/a19addd512b834b62e334d81958c15fb00c29af3))
+* Format and log audit-level messages only when audit logging is enabled. ([#1734](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1734)) ([f71521f](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/f71521f2540311e97d13646ff6d6524dfcc3965f))
+* Handle empty Request.Path values in AspNetCore middleware wrapper. ([#1704](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1704)) ([8b734a5](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/8b734a59a53cfd218322d83acbe9d7eb4e7cc055))
+* Include config file path in the "Agent is disabled " message on all platforms. ([#1727](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1727)) ([1a56612](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/1a5661243eaa84683694e022fe9806768b8af9f7))
+* IsOsPlatform() can fail on older .NET Framework Versions ([#1552](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1552)) ([699c205](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/699c2056883e4548c025e3ee893e215400899e0e))
+* Refactor StackExchange.Redis v2+ instrumentation to eliminate potential memory leaks. ([902b025](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/902b025c8c420b8bc288b15d914b47aabc1bd426))
+* Remove invalid trailing comma added to W3C tracestate header. ([#1779](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1779)) ([790a3b7](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/790a3b75dd7609d76638ea3625a9289f58b24378))
+* Resolved an issue in the `all_solutions.yml` workflow where the MSI installers were built with a self-signed certificate rather than the production code signing certificate. ([386a277](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/386a27705701a07d591a95f95830bda27898d255))
+* Retry connection on HttpRequestException error ([#1514](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1514)) ([#1484](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1484)) ([99b520e](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/99b520e271df4357f8ea62cad2403884edb4d856))
+* Stop double injecting headers with HttpClient on .NET Framework ([#1679](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1679)) ([e8bdc34](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/e8bdc34072f044e7b056dd2ce773f184aed3bfe5))
+* Update install script to correctly stop and restart IIS. ([#1740](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1740)) ([3b91dff](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/3b91dff0ad9aa2fc4218cd85d28fb6d0892cc7fb))
+* Update the MSI UI to clean up formatting and readability issues. ([#1748](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1748)) ([3fbc543](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/3fbc54310ed3989f915e6f39b27ef8867ed573db))
+
+
+### Security
+
+* Update Grpc.Net.Client library to address Dependabot alerts. ([#1768](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1768)) ([#1769](https://github.com/RalphHightower/newrelic-dotnet-agent/issues/1769)) ([eee7564](https://github.com/RalphHightower/newrelic-dotnet-agent/commit/eee7564cbe79b653ad7909af36f09c9a64cdb731))
+
 ## [10.13.0](https://github.com/newrelic/newrelic-dotnet-agent/compare/v10.12.1...v10.13.0) (2023-07-14)
 
 
